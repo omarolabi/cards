@@ -1,3 +1,50 @@
-<p>
-  card-viewer works!
-</p>
+<div *ngIf="card$ | async as card">
+
+  <h2>{{ card.title }} <span>{{ card.number }}</span></h2>
+
+  <ul>
+    <li>{{ card.faction }}</li>
+    <li>{{ card.type }}</li>
+    <li>{{ card.mainText }}</li>
+    <li>{{ card.loreText }}</li>
+    <li>{{ card.location }}</li>
+    <li *ngIf="card.glory">{{ card.glory }}</li>
+    <li *ngIf="card.restricted">{{ card.restricted }}</li>
+    <li *ngIf="card.atackActions.length !== 0">
+      <span>Ataques:</span>
+      <ul>
+        <li *ngFor="let atackActions of card.atackActions">
+          {{ atackActions.range }} /
+          {{ atackActions.dices }} {{ atackActions.dicesType }} /
+          {{ atackActions.damage }}
+        </li>
+      </ul>
+    </li>
+
+
+
+
+    <!-- export interface CardModel {
+      number: number;
+      title: string;
+      faction: string;
+      type: string;
+      mainText: string;
+      loreText: string;
+      location: string;
+      glory: number;
+      restricted: string;
+      atackActions: AtackActionsModel;
+    }
+
+    export interface AtackActionsModel {
+      range: number;
+      dicesType: string;
+      dices: number;
+      damage: number;
+    } -->
+
+  </ul>
+
+  <button (click)="goBack()">volver</button>
+</div>
