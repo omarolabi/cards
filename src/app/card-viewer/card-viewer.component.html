@@ -1,15 +1,13 @@
-<div *ngIf="card$ | async as card" style="width: 18rem;">
-
+<div *ngIf="card$ | async as card">
   <h3 class="h5">
     {{ card.title }}
     <small class="text-muted">#{{ card.number }}</small>
   </h3>
-
   <figure class="figure">
-    <img class="card-img-bottom img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
+    <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
   </figure>
-
-
+  <h4 class="h5">Texto Corregido:</h4>
+  <p innerHTML="{{ card.mainText }}"></p>
   <p>
     <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">volver</button>
   </p>
