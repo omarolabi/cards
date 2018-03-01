@@ -1,27 +1,5 @@
 <div *ngIf="card$ | async as card">
-
-  <h2>{{ card.title }} <span>{{ card.number }}</span></h2>
-
-  <ul>
-    <li>{{ card.faction }}</li>
-    <li>{{ card.type }}</li>
-    <li>{{ card.mainText }}</li>
-    <li>{{ card.loreText }}</li>
-    <li>{{ card.location }}</li>
-    <li *ngIf="card.glory">{{ card.glory }}</li>
-    <li *ngIf="card.restricted">{{ card.restricted }}</li>
-    <li *ngIf="card.atackActions.length !== 0">
-      <span>Ataques:</span>
-      <ul>
-        <li *ngFor="let atackActions of card.atackActions">
-          {{ atackActions.range }} /
-          {{ atackActions.dices }} {{ atackActions.dicesType }} /
-          {{ atackActions.damage }}
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-
   <button (click)="goBack()">volver</button>
+  <h2>{{ card.title }} <span>{{ card.number }}</span></h2>
+  <img src="./assets/images/{{card.number}}.png" alt="">
 </div>
