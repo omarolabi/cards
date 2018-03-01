@@ -1,5 +1,5 @@
-<ul>
-  <li class="row list-item-container debits" *ngFor="let card of cardsList">
-    <a routerLink="/card/{{card.number}}" >{{ card.title }} (#{{ card.number }})</a>
-  </li>
-</ul>
+
+
+<nav class="nav flex-column">
+    <a class="nav-link text-muted" routerLink="/card/{{card.number}}" *ngFor="let card of cardsList">{{ card.title }} <small>(#{{ card.number }})</small></a>
+</nav>

@@ -1,5 +1,17 @@
-<div *ngIf="card$ | async as card">
-  <button (click)="goBack()">volver</button>
-  <h2>{{ card.title }} <span>{{ card.number }}</span></h2>
-  <img src="./assets/images/{{card.number}}.png" alt="">
+<div *ngIf="card$ | async as card" style="width: 18rem;">
+
+  <h3 class="h5">
+    {{ card.title }}
+    <small class="text-muted">#{{ card.number }}</small>
+  </h3>
+
+  <figure class="figure">
+    <img class="card-img-bottom img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
+  </figure>
+
+
+  <p>
+    <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">volver</button>
+  </p>
+
 </div>
