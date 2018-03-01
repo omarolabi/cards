@@ -1,5 +1,5 @@
 <ul>
   <li class="row list-item-container debits" *ngFor="let card of cardsList">
-    <a href="/card/{{ card.number }}">{{ card.title }}</a>
+    <a routerLink="/card/{{card.number}}" >{{ card.title }}</a>
   </li>
 </ul>
