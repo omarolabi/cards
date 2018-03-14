@@ -1,3 +1,13 @@
+<form>
+  <div class="form-group">
+    <label for="collection">Filtrar por producto</label>
+    <select class="form-control" id="collection">
+      <option [value]="'all'">Todas</option>
+      <option [value]="collection.codeName" *ngFor="let collection of collectionList">{{ collection.name }}</option>
+    </select>
+  </div>
+</form>
+
 <nav class="nav flex-column">
     <a class="nav-link text-muted" routerLink="/card/{{card.number}}" *ngFor="let card of cardsList">{{ card.title }} <small>(#{{ card.number }})</small></a>
 </nav>

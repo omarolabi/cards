@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { CardModel } from '../models/card.model';
 import 'rxjs/add/operator/map';
 
-
 @Injectable()
 export class CardsService {
 

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CardSelectorComponent } from './card-selector/card-selector.component';
 import { CardViewerComponent } from './card-viewer/card-viewer.component';
 import { CardsService } from './services/cards.service';
+import { CollectionsService } from './services/collections.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    CardsService
+    CardsService,
+    CollectionsService
   ],
   bootstrap: [AppComponent]
 })
