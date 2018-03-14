@@ -31,10 +31,27 @@ export class CardSelectorComponent implements OnInit {
     });
   }
 
+  private filterList(collection): void {
+    if (collection === 'all') {
+      this.getCardsList();
+      console.log(JSON.stringify(this.cardsList));
+    } else {
+      this.cardsService.getCards().subscribe(data => {
+        this.cardsList = data.filter(elem => {
+          return elem.collectionCode === collection;
+        });
+      });
+    }
+  }
+
   private getCollections(): void {
     this.collectionsService.getCollections().subscribe(data => {
       this.collectionList = data;
     });
+  }
+
+  public filterCollection(collection) {
+    this.filterList(collection);
   }
 
 }

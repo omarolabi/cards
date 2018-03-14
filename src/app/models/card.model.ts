@@ -6,6 +6,7 @@ export interface CardModel {
   mainText: string;
   loreText: string;
   location: string;
+  collectionCode: string;
   glory: number;
   restricted: string;
   atackActions: AtackActionsModel;

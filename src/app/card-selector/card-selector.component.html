@@ -1,13 +1,32 @@
 <form>
   <div class="form-group">
-    <label for="collection">Filtrar por producto</label>
-    <select class="form-control" id="collection">
+    <select class="form-control" id="collection" (change)="filterCollection($event.target.value)">
+      <option [value]="'placeholder'">Filtrar por producto</option>
       <option [value]="'all'">Todas</option>
       <option [value]="collection.codeName" *ngFor="let collection of collectionList">{{ collection.name }}</option>
     </select>
   </div>
 </form>
 
-<nav class="nav flex-column">
-    <a class="nav-link text-muted" routerLink="/card/{{card.number}}" *ngFor="let card of cardsList">{{ card.title }} <small>(#{{ card.number }})</small></a>
-</nav>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Colección</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let card of cardsList">
+      <td>
+        <small>(#{{ card.number }})</small>
+      </td>
+      <td>
+        <a class="" routerLink="/card/{{card.number}}">{{ card.title }}</a>
+      </td>
+      <td>
+        <small>{{ card.location }}</small>
+      </td>
+    </tr>
+  </tbody>
+</table>
