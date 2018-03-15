@@ -1,32 +1,44 @@
 <form>
   <div class="form-group">
-    <select class="form-control" id="collection" (change)="filterCollection($event.target.value)">
-      <option [value]="'placeholder'">Filtrar por producto</option>
+    <label for="collectionFilter">Filtrar por colección:</label>
+    <select class="form-control" id="collectionFilter" (change)="filterCollection($event.target.value)">
       <option [value]="'all'">Todas</option>
-      <option [value]="collection.codeName" *ngFor="let collection of collectionList">{{ collection.name }}</option>
+      <option [value]="collection.codeName" *ngFor="let collection of collectionList$ | async">{{ collection.name }}</option>
     </select>
   </div>
+  <!-- <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="collectionFilter" id="CollectionFilterAll" value="all" (change)="filterCollection($event.target.value)" checked>
+      <label class="form-check-label" for="CollectionFilterAll">Todas</label>
+    </div>
+    <div class="form-check" *ngFor="let collection of collectionList$ | async">
+      <input class="form-check-input" type="radio" name="collectionFilter" [id]="collection.codeName" [value]="collection.codeName" (change)="filterCollection($event.target.value)">
+      <label class="form-check-label" [for]="collection.codeName">{{ collection.name }}</label>
+    </div>
+  </div> -->
 </form>
 
-<table class="table table-sm">
+<table class="table">
   <thead class="thead-light">
     <tr>
       <th>#</th>
       <th>Nombre</th>
-      <th>Colección</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td colspan="2" *ngIf="isWorking">Cargando ...</td>
+    </tr>
     <tr *ngFor="let card of cardsList">
       <td>
-        <small>(#{{ card.number }})</small>
+        <small>#{{ card.number }}</small>
       </td>
       <td>
         <a class="" routerLink="/card/{{card.number}}">{{ card.title }}</a>
       </td>
-      <td>
-        <small>{{ card.location }}</small>
-      </td>
+    </tr>
+    <tr class="table-secondary" *ngIf="!isWorking">
+      <td colspan="2" *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</td>
     </tr>
   </tbody>
 </table>

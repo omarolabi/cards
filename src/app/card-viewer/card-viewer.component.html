@@ -1,15 +1,17 @@
-<div *ngIf="card$ | async as card">
-  <h3 class="h5">
+<div *ngIf="isWorking">
+  Cargando ...
+</div>
+
+<div *ngIf="cards$ | async as card">
+  <h3 class="h4 text-center">
     {{ card.title }}
     <small class="text-muted">#{{ card.number }}</small>
   </h3>
+  <p innerHTML="{{ card.mainText }}"></p>
   <figure class="figure">
     <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
   </figure>
-  <h4 class="h5">Texto Corregido:</h4>
-  <p innerHTML="{{ card.mainText }}"></p>
   <p>
     <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">Volver</button>
   </p>
-
 </div>

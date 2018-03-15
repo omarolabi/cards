@@ -3,6 +3,8 @@ import { CardsService } from '../services/cards.service';
 import { CollectionsService } from '../services/collections.service';
 import { CardModel } from '../models/card.model';
 import { CollectionModel } from '../models/collection.model';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/finally';
 
 @Component({
   selector: 'app-card-selector',
@@ -12,8 +14,11 @@ import { CollectionModel } from '../models/collection.model';
 
 export class CardSelectorComponent implements OnInit {
 
-  public cardsList: CardModel[];
-  public collectionList: CollectionModel[];
+  public isWorking = true;
+  public isCardsFiltered = false;
+  public cardsListOriginal: CardModel[] = [];
+  public cardsList: CardModel[] = [];
+  public collectionList$: Observable<CollectionModel[]>;
 
   constructor(
     private cardsService: CardsService,
@@ -26,32 +31,27 @@ export class CardSelectorComponent implements OnInit {
   }
 
   private getCardsList(): void {
-    this.cardsService.getCards().subscribe(data => {
-      this.cardsList = data;
-    });
-  }
-
-  private filterList(collection): void {
-    if (collection === 'all') {
-      this.getCardsList();
-      console.log(JSON.stringify(this.cardsList));
-    } else {
-      this.cardsService.getCards().subscribe(data => {
-        this.cardsList = data.filter(elem => {
-          return elem.collectionCode === collection;
-        });
+    this.cardsService.getCards()
+      .finally(() => this.isWorking = false)
+      .subscribe(data => {
+        this.cardsListOriginal = data;
+        this.cardsList = data;
       });
-    }
   }
 
   private getCollections(): void {
-    this.collectionsService.getCollections().subscribe(data => {
-      this.collectionList = data;
-    });
+    this.collectionList$ = this.collectionsService.getCollections();
   }
 
-  public filterCollection(collection) {
-    this.filterList(collection);
+  public filterCollection(collection): void {
+    if (collection === 'all') {
+      this.cardsList = this.cardsListOriginal;
+      this.isCardsFiltered = false;
+    } else {
+      this.cardsList = this.cardsListOriginal
+        .filter(elem => elem.collectionCode === collection);
+      this.isCardsFiltered = true;
+    }
   }
 
 }
