@@ -1,1 +1,76 @@
+//   Variables:
 
+$dark-grey: #464646;
+
+
+//   Fuentes:
+
+@font-face {
+  font-family: 'cronospro-regular';
+  src: url("../assets/fonts/cronospro-regular-webfont.eot");
+  src: url("../assets/fonts/cronospro-regular-webfont.eot?#iefix") format("embedded-opentype"), 
+  url("../assets/fonts/cronospro-regular-webfont.woff2") format("woff2"), 
+  url("../assets/fonts/cronospro-regular-webfont.woff") format("woff"), 
+  url("../assets/fonts/cronospro-regular-webfont.ttf") format("truetype"), 
+  url("../assets/fonts/cronospro-regular-webfont.svg#cronospro-regular") format("svg");
+}
+
+@font-face {
+  font-family: 'cronospro-semibold';
+  src: url("../assets/fonts/cronospro-semibold-webfont.eot");
+  src: url("../assets/fonts/cronospro-semibold-webfont.eot?#iefix") format("embedded-opentype"), 
+  url("../assets/fonts/cronospro-semibold-webfont.woff2") format("woff2"), 
+  url("../assets/fonts/cronospro-semibold-webfont.woff") format("woff"), 
+  url("../assets/fonts/cronospro-semibold-webfont.ttf") format("truetype"), 
+  url("../assets/fonts/cronospro-semibold-webfont.svg#cronospro-semibold") format("svg");
+}
+
+//   Comienza el diseño!
+
+* {
+	box-sizing: border-box;
+	font-family: 'cronospro-regular';
+	margin: 0;
+	padding: 0;
+}
+
+.bg-nav {
+	background: $dark-grey;
+	padding: 15px 20px;
+	vertical-align: top;
+
+	img {
+		width: 60px;
+		margin-right: 20px;
+		vertical-align: top;
+	}
+
+	.header-text {
+		display: inline-block;
+		width: 40%;
+		vertical-align: bottom;
+
+		h1 {
+			color: #fff;
+			font-size: 1.8rem;
+		}
+
+		p {
+			color: #fff;
+			opacity: 0.5;
+			font-size: 1.2rem;
+			margin-top: -10px;
+		}
+	}
+
+	.icos-menu {
+		width: 52%;
+		text-align: right;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+.container {
+	margin: 0 auto;
+}

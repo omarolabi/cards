@@ -1,7 +1,20 @@
-<nav class="navbar navbar-dark bg-dark sticky-top">
-  <span class="navbar-brand text-center" href="#">{{ title }} | <small>Cartas corregidas</small></span>
-</nav>
+<header class="bg-nav sticky-top">
+	<img src="assets/images/ico-apoyo2.svg" alt="">
+	<div class="header-text">
+		<h1 href="#">{{ title }}</h1>
+ 		<p>Cartas corregidas</p>
+	</div>
+	<nav class="icos-menu">
+		<a href="#"><img src="assets/images/global-cards.png" alt="Cartas globales"></a>
+		<a href="#"><img src="assets/images/garrek-cards.png" alt="Saqueadores de Garrek"></a>
+		<a href="#"><img src="assets/images/steelheart-cards.png" alt="Campeones de Steelheart"></a>
+		<a href="#"><img src="assets/images/sepulcral-cards.png" alt="Guardia sepulcral"></a>
+		<a href="#"><img src="assets/images/ironskull-cards.png" alt="Loz chicoz de Ironskull"></a>
+		<a href="#"><img src="assets/images/hachas-cards.png" alt="Los hachas escogidas"></a>
+		<a href="#"><img src="assets/images/spiteclaw-cards.png" alt="El Enjambre de Spiteclaw"></a>
+	</nav>
+</header>
 <br>
 <div class="container">
-  <router-outlet></router-outlet>
+ 	<router-outlet></router-outlet>
 </div>
