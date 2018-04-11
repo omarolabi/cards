@@ -19,6 +19,7 @@ export class CardSelectorComponent implements OnInit {
   public cardsListOriginal: CardModel[] = [];
   public cardsList: CardModel[] = [];
   public collectionList$: Observable<CollectionModel[]>;
+  public selectedFiltervalue = 'all';
 
   constructor(
     private cardsService: CardsService,
@@ -28,11 +29,15 @@ export class CardSelectorComponent implements OnInit {
   ngOnInit() {
     this.getCardsList();
     this.getCollections();
+    this.rememberFilter();
   }
 
   private getCardsList(): void {
     this.cardsService.getCards()
-      .finally(() => this.isWorking = false)
+      .finally(() => {
+        this.isWorking = false;
+        this.rememberFilter();
+      })
       .subscribe(data => {
         this.cardsListOriginal = data;
         this.cardsList = data;
@@ -41,6 +46,13 @@ export class CardSelectorComponent implements OnInit {
 
   private getCollections(): void {
     this.collectionList$ = this.collectionsService.getCollections();
+  }
+
+  public rememberFilter() {
+    if (localStorage.filterCollection) {
+      this.selectedFiltervalue = localStorage.filterCollection;
+      this.filterCollection(localStorage.filterCollection);
+    }
   }
 
   public filterCollection(collection): void {
@@ -52,6 +64,7 @@ export class CardSelectorComponent implements OnInit {
         .filter(elem => elem.collectionCode === collection);
       this.isCardsFiltered = true;
     }
+    localStorage.setItem('filterCollection', collection);
   }
 
 }

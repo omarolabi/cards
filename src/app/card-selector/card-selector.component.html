@@ -1,7 +1,7 @@
 <form>
   <div class="form-group">
     <label for="collectionFilter">Filtrar por colección:</label>
-    <select class="form-control" id="collectionFilter" (change)="filterCollection($event.target.value)">
+    <select [(ngModel)]="selectedFiltervalue" class="form-control" id="collectionFilter" (change)="filterCollection($event.target.value)" [ngModelOptions]="{standalone: true}">
       <option [value]="'all'">Todas</option>
       <option [value]="collection.codeName" *ngFor="let collection of collectionList$ | async">{{ collection.name }}</option>
     </select>
