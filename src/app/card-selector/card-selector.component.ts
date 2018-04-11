@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../services/cards.service';
-import { CollectionsService } from '../services/collections.service';
+import { FactionsService } from '../services/factions.service';
 import { CardModel } from '../models/card.model';
-import { CollectionModel } from '../models/collection.model';
+import { FactionModel } from '../models/faction.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 
@@ -18,17 +18,17 @@ export class CardSelectorComponent implements OnInit {
   public isCardsFiltered = false;
   public cardsListOriginal: CardModel[] = [];
   public cardsList: CardModel[] = [];
-  public collectionList$: Observable<CollectionModel[]>;
+  public collectionList$: Observable<FactionModel[]>;
   public selectedFiltervalue = 'all';
 
   constructor(
     private cardsService: CardsService,
-    private collectionsService: CollectionsService
+    private collectionsService: FactionsService
   ) { }
 
   ngOnInit() {
     this.getCardsList();
-    this.getCollections();
+    this.getFactions();
     this.rememberFilter();
   }
 
@@ -44,27 +44,27 @@ export class CardSelectorComponent implements OnInit {
       });
   }
 
-  private getCollections(): void {
-    this.collectionList$ = this.collectionsService.getCollections();
+  private getFactions(): void {
+    this.collectionList$ = this.collectionsService.getFactions();
   }
 
   public rememberFilter() {
-    if (localStorage.filterCollection) {
-      this.selectedFiltervalue = localStorage.filterCollection;
-      this.filterCollection(localStorage.filterCollection);
+    if (localStorage.filterFaction) {
+      this.selectedFiltervalue = localStorage.filterFaction;
+      this.filterFaction(localStorage.filterFaction);
     }
   }
 
-  public filterCollection(collection): void {
-    if (collection === 'all') {
+  public filterFaction(faction): void {
+    if (faction === 'all') {
       this.cardsList = this.cardsListOriginal;
       this.isCardsFiltered = false;
     } else {
       this.cardsList = this.cardsListOriginal
-        .filter(elem => elem.collectionCode === collection);
+        .filter(elem => elem.faction === faction);
       this.isCardsFiltered = true;
     }
-    localStorage.setItem('filterCollection', collection);
+    localStorage.setItem('filterFaction', faction);
   }
 
 }
