@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod && sw-precache --verbose --config=sw-precache-config.js",
-    "precache": "ng build --aot -prod && sw-precache --verbose --config=sw-precache-config.js"
+    "firebase": "ng build --aot -prod && sw-precache --verbose --config=sw-precache-config.js && firebase deploy"
   },
   "private": true,
   "dependencies": {
