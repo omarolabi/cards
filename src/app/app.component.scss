@@ -68,9 +68,27 @@ $dark-grey: #464646;
 		text-align: right;
 		display: inline-block;
 		vertical-align: top;
+
+		img {
+
+			&:hover {
+				opacity: 0.7;
+				transition: all 0.3s;
+			}
+		}
 	}
 }
 
-.container {
-	margin: 0 auto;
+.table {
+
+	.file-card {
+		border-top: 1px solid #E8E8E8;
+		border-bottom: 1px solid #E8E8E8;
+		padding: 8px;
+		display: block;
+
+		p {
+			margin: 0;
+		}
+	}
 }

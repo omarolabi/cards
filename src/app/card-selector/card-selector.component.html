@@ -18,7 +18,28 @@
   </div> -->
 </form>
 
-<table class="table">
+<div class="table row">
+    <div class="col-1">
+        <p>#</p>
+    </div>
+    <div class="col-11">
+        <p>Nombre</p>
+    </div>
+
+    <div class="col-12">
+        <p *ngIf="isWorking">Cargando ...</p>
+    </div>
+
+    <a href="javascript:;" *ngFor="let card of cardsList" class="file-card col-12">
+            <p>#{{ card.number }} <span routerLink="/card/{{card.number}}">{{ card.title }}</span></p>
+    </a>
+
+    <div class="table-secondary" *ngIf="!isWorking">
+        <p *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</p>
+    </div>
+</div>
+
+<!-- <table class="table">
   <thead class="thead-light">
     <tr>
       <th>#</th>
@@ -29,11 +50,11 @@
     <tr>
       <td colspan="2" *ngIf="isWorking">Cargando ...</td>
     </tr>
-    <tr *ngFor="let card of cardsList">
-      <td>
+    <tr *ngFor="let card of cardsList" class="file-card">
+      <td class="number-card">
         <small>#{{ card.number }}</small>
       </td>
-      <td>
+      <td class="title-card">
         <a class="" routerLink="/card/{{card.number}}">{{ card.title }}</a>
       </td>
     </tr>
@@ -41,4 +62,4 @@
       <td colspan="2" *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</td>
     </tr>
   </tbody>
-</table>
+</table> -->
