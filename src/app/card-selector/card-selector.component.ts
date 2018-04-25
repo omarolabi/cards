@@ -59,12 +59,14 @@ export class CardSelectorComponent implements OnInit {
     if (faction === 'all') {
       this.cardsList = this.cardsListOriginal;
       this.isCardsFiltered = false;
+      localStorage.removeItem('filterFaction');
     } else {
       this.cardsList = this.cardsListOriginal
         .filter(elem => elem.faction === faction);
       this.isCardsFiltered = true;
+      localStorage.setItem('filterFaction', faction);
     }
-    localStorage.setItem('filterFaction', faction);
+
   }
 
 }
