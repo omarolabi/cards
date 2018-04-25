@@ -29,7 +29,7 @@
     <tr>
       <td colspan="2" *ngIf="isWorking">Cargando ...</td>
     </tr>
-    <tr *ngFor="let card of cardsList">
+    <tr *ngFor="let card of cardsList | orderBy: 'number'">
       <td>
         <small>#{{ card.number }}</small>
       </td>
