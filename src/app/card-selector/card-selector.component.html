@@ -1,19 +1,19 @@
 <!-- <form>
   <div class="form-group">
-    <label for="collectionFilter">Filtrar por colección:</label>
-    <select class="form-control" id="collectionFilter" (change)="filterCollection($event.target.value)">
+    <label for="factionFilter">Filtrar por facción:</label>
+    <select [(ngModel)]="selectedFiltervalue" class="form-control" id="factionFilter" (change)="filterFaction($event.target.value)" [ngModelOptions]="{standalone: true}">
       <option [value]="'all'">Todas</option>
-      <option [value]="collection.codeName" *ngFor="let collection of collectionList$ | async">{{ collection.name }}</option>
+      <option [value]="faction.name" *ngFor="let faction of collectionList$ | async">{{ faction.name }}</option>
     </select>
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="collectionFilter" id="CollectionFilterAll" value="all" (change)="filterCollection($event.target.value)" checked>
-      <label class="form-check-label" for="CollectionFilterAll">Todas</label>
+      <input class="form-check-input" type="radio" name="factionFilter" id="factionFilterAll" value="all" (change)="filterFaction($event.target.value)" checked>
+      <label class="form-check-label" for="factionFilterAll">Todas</label>
     </div>
-    <div class="form-check" *ngFor="let collection of collectionList$ | async">
-      <input class="form-check-input" type="radio" name="collectionFilter" [id]="collection.codeName" [value]="collection.codeName" (change)="filterCollection($event.target.value)">
-      <label class="form-check-label" [for]="collection.codeName">{{ collection.name }}</label>
+    <div class="form-check" *ngFor="let faction of collectionList$ | async">
+      <input class="form-check-input" type="radio" name="factionFilter" [id]="faction.name" [value]="faction.name" (change)="filterFaction($event.target.value)">
+      <label class="form-check-label" [for]="faction.name">{{ faction.name }}</label>
     </div>
   </div>
 </form> -->
