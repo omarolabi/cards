@@ -30,65 +30,125 @@ $dark-grey: #464646;
 * {
 	box-sizing: border-box;
 	font-family: 'cronospro-regular';
-	margin: 0;
+}
+
+body {
+	background: #D5D5D5;
+}
+
+main {
+	max-width: 600px;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.row {
+ 	margin: 0;
 	padding: 0;
 }
 
 .bg-nav {
 	background: $dark-grey;
-	padding: 15px 20px;
 	vertical-align: top;
 
+	.img-box {
+		width: 100%;
+		text-align: center;
+		position: relative;
+
+		@media screen and (max-width: 500px) {
+			padding: 5px;
+		}
+
+		// @media screen and (min-width: 1000px) {
+		// 	width: 300px;
+		// 	text-align: left;
+		// 	display: inline-block;
+		// 	margin-right: 20px;
+		// 	vertical-align: top;
+		// }
+	}
+
 	img {
-		width: 60px;
-		margin-right: 20px;
-		vertical-align: top;
-	}
-
-	.header-text {
 		display: inline-block;
-		width: 40%;
-		vertical-align: bottom;
 
-		h1 {
-			color: #fff;
-			font-size: 1.8rem;
-		}
+		&.spin {
+			height: 100px;
 
-		p {
-			color: #fff;
-			opacity: 0.5;
-			font-size: 1.2rem;
-			margin-top: -10px;
-		}
-	}
-
-	.icos-menu {
-		width: 52%;
-		text-align: right;
-		display: inline-block;
-		vertical-align: top;
-
-		img {
-
-			&:hover {
-				opacity: 0.7;
-				transition: all 0.3s;
+			@media screen and (max-width: 500px) {
+				height: 60px;
 			}
+		}
+
+		&.letter {
+			height: 40px;
+			position: absolute;
+			left: 50%;
+			top: 30px;
+			transform: translateX(-50.5px);
+
+			@media screen and (max-width: 500px) {
+				height: 25px;
+				transform: translateX(-36.5px);
+				top: 22.5px;
+			}
+
+			// @media screen and (min-width: 1000px) {
+			// 	left: 0;
+			// 	transform: translateX(0px);
+			// }
 		}
 	}
 }
 
-.table {
+.icos-menu {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
 
-	.file-card {
-		border-top: 1px solid #E8E8E8;
-		border-bottom: 1px solid #E8E8E8;
-		padding: 8px;
-		display: block;
+	// @media screen and (min-width: 1000px) {
+	// 	width: 60%;
+	// 	text-align: right;
+	// 	display: inline-block;
+	// 	float: right;
+	// 	margin-top: 0px;
 
-		p {
-			margin: 0;
+	// 	div {
+	// 		padding: 5px 0;
+	// 	}
+	// }
+
+	a {
+		display: inline-block;
+		height: 45px;
+		width: 45px;
+		margin: 10px 5%;
+
+		@media screen and (max-width: 600px) {
+			margin: 5px 5%;
+		}
+
+		@media screen and (max-width: 500px) {
+			margin: 5px 4%;
+		}
+
+		@media screen and (max-width: 400px) {
+			margin: 5px 2%;
 		}
 	}
+
+	img {
+		width: 45px;
+
+		&:hover {
+			opacity: 0.7;
+			transition: all 0.3s;
+		}
+	}
+}
+
+.container {
+
+	max-width: 100%;
+	padding: 0;
 }

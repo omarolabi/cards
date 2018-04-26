@@ -2,8 +2,8 @@
   Cargando ...
 </div>
 
-<div *ngIf="cards$ | async as card">
-  <h3 class="h4 text-center">
+<div class="viewer-box" *ngIf="cards$ | async as card">
+  <h3 class="text-center">
     {{ card.title }}
     <small class="text-muted">#{{ card.number }}</small>
   </h3>
@@ -12,6 +12,6 @@
     <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
   </figure>
   <p>
-    <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">Volver</button>
+    <button class="btn btn-block" (click)="goBack()">Volver</button>
   </p>
 </div>

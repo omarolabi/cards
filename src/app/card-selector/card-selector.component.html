@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
   <div class="form-group">
     <label for="collectionFilter">Filtrar por colección:</label>
     <select class="form-control" id="collectionFilter" (change)="filterCollection($event.target.value)">
@@ -6,7 +6,7 @@
       <option [value]="collection.codeName" *ngFor="let collection of collectionList$ | async">{{ collection.name }}</option>
     </select>
   </div>
-  <!-- <div class="form-group">
+  <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="radio" name="collectionFilter" id="CollectionFilterAll" value="all" (change)="filterCollection($event.target.value)" checked>
       <label class="form-check-label" for="CollectionFilterAll">Todas</label>
@@ -15,51 +15,25 @@
       <input class="form-check-input" type="radio" name="collectionFilter" [id]="collection.codeName" [value]="collection.codeName" (change)="filterCollection($event.target.value)">
       <label class="form-check-label" [for]="collection.codeName">{{ collection.name }}</label>
     </div>
-  </div> -->
-</form>
+  </div>
+</form> -->
 
-<div class="table row">
-    <div class="col-1">
-        <p>#</p>
-    </div>
-    <div class="col-11">
-        <p>Nombre</p>
+<div class="table">
+    <div class="row head-list">
+        <p class="col-2 col-sm-1">#</p>
+        <p class="col-10 col-sm-11">Nombre</p>
     </div>
 
-    <div class="col-12">
-        <p *ngIf="isWorking">Cargando ...</p>
+    <div class="row">
+        <p class="col-12" *ngIf="isWorking">Cargando ...</p>
     </div>
 
-    <a href="javascript:;" *ngFor="let card of cardsList" class="file-card col-12">
-            <p>#{{ card.number }} <span routerLink="/card/{{card.number}}">{{ card.title }}</span></p>
+    <a href="javascript:;" *ngFor="let card of cardsList" class="file-card row">
+            <p class="col-2 col-sm-1 number-card">#{{ card.number }}</p>
+            <p class="col-10 col-sm-11 title-card" routerLink="/card/{{card.number}}">{{ card.title }}</p>
     </a>
 
-    <div class="table-secondary" *ngIf="!isWorking">
-        <p *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</p>
+    <div class="table-secondary row" *ngIf="!isWorking">
+        <p class="col-12" *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</p>
     </div>
 </div>
-
-<!-- <table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" *ngIf="isWorking">Cargando ...</td>
-    </tr>
-    <tr *ngFor="let card of cardsList" class="file-card">
-      <td class="number-card">
-        <small>#{{ card.number }}</small>
-      </td>
-      <td class="title-card">
-        <a class="" routerLink="/card/{{card.number}}">{{ card.title }}</a>
-      </td>
-    </tr>
-    <tr class="table-secondary" *ngIf="!isWorking">
-      <td colspan="2" *ngIf="cardsList.length === 0">No hay cartas corregidas que mostrar</td>
-    </tr>
-  </tbody>
-</table> -->
