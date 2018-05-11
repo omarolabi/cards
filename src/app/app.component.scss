@@ -27,19 +27,15 @@ $dark-grey: #464646;
 
 //   Comienza el diseño!
 
-* {
-	box-sizing: border-box;
-	font-family: 'cronospro-regular';
-}
-
-body {
-	background: #D5D5D5;
-}
-
 main {
 	max-width: 600px;
 	margin: 0 auto;
 	background: #fff;
+	-webkit-box-shadow: 0px 0px 24px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 24px 1px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0px 0px 24px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 24px 1px rgba(0,0,0,0.2);
+
 }
 
 .row {
