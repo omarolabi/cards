@@ -11,6 +11,10 @@
 		border: none;
 		padding: 15px;
 
+		@media screen and (max-width: 500px) {
+			padding: 15px 5px;
+		}
+
 		p {
 			background: #DADADA;
 			margin: 0;
@@ -18,7 +22,11 @@
 	}
 
 	.file-card {
-		border-bottom: 1px solid #DADADA;
+		border-bottom: 1px solid transparent;
+		-moz-border-image: -moz-linear-gradient(to right, #fff 0%,#CACACA 50%, #fff 100%);
+	    -webkit-border-image: -webkit-linear-gradient(to right, #fff 0%,#CACACA 50%, #fff 100%);
+	    border-image: linear-gradient(to right, #fff 0%,#CACACA 50%, #fff 100%);
+	    border-image-slice: 1;
 		padding: 15px;
 
 		@media screen and (max-width: 500px) {
@@ -26,7 +34,11 @@
 		}
 
 		&:hover {
-			border-bottom: 1px solid #A04545;
+			border-bottom: 1px solid transparent;
+			-moz-border-image: -moz-linear-gradient(to right, #fff 0%,#A04545 50%, #fff 100%);
+		    -webkit-border-image: -webkit-linear-gradient(to right, #fff 0%,#A04545 50%, #fff 100%);
+		    border-image: linear-gradient(to right, #fff 0%,#A04545 50%, #fff 100%);
+		    border-image-slice: 1;
 			text-decoration: none;
 
 			p {

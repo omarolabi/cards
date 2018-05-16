@@ -100,19 +100,8 @@ main {
 .icos-menu {
 	width: 100%;
 	text-align: center;
-	margin-top: 10px;
-
-	// @media screen and (min-width: 1000px) {
-	// 	width: 60%;
-	// 	text-align: right;
-	// 	display: inline-block;
-	// 	float: right;
-	// 	margin-top: 0px;
-
-	// 	div {
-	// 		padding: 5px 0;
-	// 	}
-	// }
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 	a {
 		display: inline-block;

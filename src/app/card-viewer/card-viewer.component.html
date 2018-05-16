@@ -7,10 +7,10 @@
     {{ card.title }}
     <small class="text-muted">#{{ card.number }}</small>
   </h3>
-  <p innerHTML="{{ card.mainText }}"></p>
   <figure class="figure">
     <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
   </figure>
+  <p class="description" innerHTML="{{ card.mainText }}"></p>
   <p>
     <button class="btn btn-block" (click)="goBack()">Volver</button>
   </p>
