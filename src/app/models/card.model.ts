@@ -8,10 +8,10 @@ export interface CardModel {
   location: string;
   glory: number;
   restricted: string;
-  atackActions: AtackActionsModel;
+  attackActions: AttackActionsModel;
 }
 
-export interface AtackActionsModel {
+export interface AttackActionsModel {
   range: number;
   dicesType: string;
   dices: number;

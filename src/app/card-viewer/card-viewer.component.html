@@ -7,10 +7,30 @@
     {{ card.title }}
     <small class="text-muted">#{{ card.number }}</small>
   </h3>
+  <p class="text-muted text-center">{{ card.type }} - {{ card.faction }}</p>
   <p innerHTML="{{ card.mainText }}"></p>
-  <figure class="figure">
+  <!-- <figure class="figure">
     <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
-  </figure>
+  </figure> -->
+  <p class="text-muted text-center" *ngIf="card.type === 'Objetivo'">Puntos de gloria: {{ card.glory }}</p>
+  <ng-container *ngIf="card.attackActions.length > 0">
+    <table class="table" *ngFor="let attackActions of card.attackActions">
+      <thead>
+        <tr>
+          <th>Alc.</th>
+          <th>Dados</th>
+          <th>Daño</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ attackActions.range }}</td>
+          <td>{{ attackActions.dicesType }} {{ attackActions.dices }}</td>
+          <td>{{ attackActions.damage }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
   <p>
     <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">Volver</button>
   </p>

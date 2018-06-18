@@ -9,7 +9,7 @@
     "location": "Caja Básica",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 43,
@@ -21,19 +21,19 @@
     "location": "Caja Básica",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 44,
     "title": "Tácticas forjadas por la tormenta",
     "faction": "Campeones de Steelheart",
     "type": "Ardid",
-    "mainText": "En la siguiente activación puedes realizar la siguiente Reacción.<br><b>Reacción:</b> Después de que una acción de Ataque de un guerrero enemigo fracase, elige hasta dos guerreros amigos y empújalos un hexágono cada uno.",
+    "mainText": "En la siguiente activación puedes realizar la siguiente Reacción.<br><b>Reacción:</b> Después de que una acción de Ataque de un guerrero enemigo fracase, elige hasta dos guerreros amigos y empújalos hasta un hexágono cada uno.",
     "loreText": "Los Stormcast Eternals luchan al unísono, su precisión parece sobrenatural.",
     "location": "Caja Básica",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 431,
@@ -45,7 +45,7 @@
     "location": "Caja Básica",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 75,
@@ -57,7 +57,7 @@
     "location": "Expansión Guardia Sepulcral",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 299,
@@ -69,7 +69,7 @@
     "location": "Expansión Guardia Sepulcral",
     "glory": 2,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 91,
@@ -81,7 +81,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": 1,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 95,
@@ -93,7 +93,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": 2,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 103,
@@ -105,7 +105,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 315,
@@ -117,7 +117,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 341,
@@ -129,7 +129,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 107,
@@ -141,7 +141,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": "",
     "restricted": "Hakka, Basha",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 387,
@@ -153,7 +153,7 @@
     "location": "Expansión Chikoz de Ironskull",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 126,
@@ -165,7 +165,7 @@
     "location": "Expansión Los hachas escogidas",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 138,
@@ -177,7 +177,7 @@
     "location": "Expansión Los hachas escogidas",
     "glory": "",
     "restricted": "Tefk",
-    "atackActions": [
+    "attackActions": [
       {
         "range": 1,
         "dicesType": "espadas",
@@ -196,7 +196,7 @@
     "location": "Expansión Los hachas escogidas",
     "glory": "",
     "restricted": "Fjul-Grimnir",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 280,
@@ -208,7 +208,7 @@
     "location": "Expansión Los hachas escogidas",
     "glory": 1,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 284,
@@ -220,7 +220,7 @@
     "location": "Expansión Los hachas escogidas",
     "glory": 1,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 328,
@@ -232,7 +232,7 @@
     "location": "Expansión  Fanáticos de Magore",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 343,
@@ -244,7 +244,7 @@
     "location": "Expansión  Fanáticos de Magore",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 269,
@@ -256,7 +256,7 @@
     "location": "Expansión  Fanáticos de Magore",
     "glory": 3,
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 424,
@@ -268,7 +268,7 @@
     "location": "Expansión Fanáticos de Magore",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 356,
@@ -280,7 +280,7 @@
     "location": "Expansión Incursores raudos",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   },
   {
     "number": 326,
@@ -292,6 +292,6 @@
     "location": "Expansión Incursores raudos",
     "glory": "",
     "restricted": "",
-    "atackActions": []
+    "attackActions": []
   }
 ]
