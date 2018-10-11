@@ -6,7 +6,7 @@
     "type": "Ardid",
     "mainText": "<b>Reacción:</b> Juégala después de que una acción de Ataque de un guerrero enemigo haya dejado fuera de combate a un guerrero amigo adyacente. Su atacante sufre 1 de daño.",
     "loreText": "'Esos caníbales no mueren fácilmente. Uno le ha arrancado la cabeza a su asesino mientras se le desparramaban las propias tripas.'",
-    "location": "Caja Básica",
+    "location": "Caja Básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
@@ -18,7 +18,7 @@
     "type": "Ardid",
     "mainText": "Los guerreros amigos no pueden ser empujados por la primera acción de Ataque en la siguiente activación.",
     "loreText": "'No retrocedamos un paso, Hammers of Sigmar. No les demos nada excepto la muerte.'",
-    "location": "Caja Básica",
+    "location": "Caja Básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
@@ -30,7 +30,7 @@
     "type": "Ardid",
     "mainText": "En la siguiente activación puedes realizar la siguiente Reacción.<br><b>Reacción:</b> Después de que una acción de Ataque de un guerrero enemigo fracase, elige hasta dos guerreros amigos y empújalos hasta un hexágono cada uno.",
     "loreText": "Los Stormcast Eternals luchan al unísono, su precisión parece sobrenatural.",
-    "location": "Caja Básica",
+    "location": "Caja Básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
@@ -42,7 +42,7 @@
     "type": "Mejora",
     "mainText": "<b>Acción.</b> Puedes tirar dos dados de ataque adicionales cuando este guerrero efectúe una acción de Ataque, aunque no cuando este guerrero efectúe una acción de Carga. Si lo haces, este guerrero no puede volver a ser activado esta fase.",
     "loreText": "Concentrando su fuerza en un único golpe, este guerrero desata una fuerza letal.",
-    "location": "Caja Básica",
+    "location": "Caja Básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
