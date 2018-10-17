@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../services/cards.service';
 import { FactionsService } from '../services/factions.service';
+import { SeasonsService } from '../services/seasons.service';
 import { CardModel } from '../models/card.model';
 import { FactionModel } from '../models/faction.model';
+import { SeasonModel } from '../models/season.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 
@@ -15,28 +17,40 @@ import 'rxjs/add/operator/finally';
 export class CardSelectorComponent implements OnInit {
 
   public isWorking = true;
-  public isCardsFiltered = false;
   public cardsListOriginal: CardModel[] = [];
   public cardsList: CardModel[] = [];
-  public collectionList$: Observable<FactionModel[]>;
-  public selectedFiltervalue = 'all';
+  public factionsList$: Observable<FactionModel[]>;
+  public seasonsList$: Observable<SeasonModel[]>;
+
+  private initialFilterValue = 'all';
+  public seasonFiltervalue = this.initialFilterValue;
+  public factionFiltervalue = this.initialFilterValue;
 
   constructor(
     private cardsService: CardsService,
-    private collectionsService: FactionsService
+    private seasonsService: SeasonsService,
+    private factionsService: FactionsService
   ) { }
 
   ngOnInit() {
-    this.getCardsList();
+    this.getSeasons();
     this.getFactions();
-    this.rememberFilter();
+    this.getCardsList();
+  }
+
+  private getSeasons(): void {
+    this.seasonsList$ = this.seasonsService.getSeasons();
+  }
+
+  private getFactions(): void {
+    this.factionsList$ = this.factionsService.getFactions();
   }
 
   private getCardsList(): void {
     this.cardsService.getCards()
       .finally(() => {
         this.isWorking = false;
-        this.rememberFilter();
+        this.setFiltersData();
       })
       .subscribe(data => {
         this.cardsListOriginal = data;
@@ -44,29 +58,46 @@ export class CardSelectorComponent implements OnInit {
       });
   }
 
-  private getFactions(): void {
-    this.collectionList$ = this.collectionsService.getFactions();
-  }
+  public setFiltersData() {
 
-  public rememberFilter() {
-    if (localStorage.filterFaction) {
-      this.selectedFiltervalue = localStorage.filterFaction;
-      this.filterFaction(localStorage.filterFaction);
-    }
-  }
-
-  public filterFaction(faction): void {
-    if (faction === 'all') {
-      this.cardsList = this.cardsListOriginal;
-      this.isCardsFiltered = false;
-      localStorage.removeItem('filterFaction');
+    if (localStorage.seasonFiltervalue) {
+      this.seasonFiltervalue = localStorage.seasonFiltervalue;
     } else {
-      this.cardsList = this.cardsListOriginal
-        .filter(elem => elem.faction === faction);
-      this.isCardsFiltered = true;
-      localStorage.setItem('filterFaction', faction);
+      localStorage.setItem('seasonFiltervalue', this.initialFilterValue);
     }
 
+    if (localStorage.factionFiltervalue) {
+      this.factionFiltervalue = localStorage.factionFiltervalue;
+    } else {
+      localStorage.setItem('factionFiltervalue', this.initialFilterValue);
+    }
+
+    this.filterSeason();
+    this.filterFaction();
+  }
+
+  public filterSeason() {
+    localStorage.setItem('seasonFiltervalue', this.seasonFiltervalue);
+    localStorage.setItem('factionFiltervalue', this.initialFilterValue);
+    this.factionFiltervalue = this.initialFilterValue;
+  }
+
+  public filterFaction(): void {
+    // if (this.factionFiltervalue === 'all' && this.seasonFiltervalue === 'all') {
+    //   this.cardsList = this.cardsListOriginal;
+    // } else {
+
+    //   if (this.factionFiltervalue === 'all') {
+    //     this.cardsList = this.cardsListOriginal
+    //       .filter(elem => elem.faction === this.seasonFiltervalue);
+    //   }
+
+    //   this.cardsList = this.cardsListOriginal
+    //     .filter(elem => elem.faction === filterValue);
+    // }
+    localStorage.setItem('factionFiltervalue', this.factionFiltervalue);
+    localStorage.setItem('seasonFiltervalue', this.initialFilterValue);
+    this.seasonFiltervalue = this.initialFilterValue;
   }
 
 }

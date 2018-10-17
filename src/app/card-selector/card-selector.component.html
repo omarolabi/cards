@@ -1,9 +1,17 @@
 <form>
   <div class="form-group">
-    <label for="factionFilter">Filtrar por facción:</label>
-    <select [(ngModel)]="selectedFiltervalue" class="form-control" id="factionFilter" (change)="filterFaction($event.target.value)" [ngModelOptions]="{standalone: true}">
+    <label for="seasonFilter">Filtrar por temporada:</label>
+    <select [(ngModel)]="seasonFiltervalue" class="form-control" id="seasonFilter" (change)="filterSeason()" [ngModelOptions]="{standalone: true}">
       <option [value]="'all'">Todas</option>
-      <option [value]="faction.name" *ngFor="let faction of collectionList$ | async">{{ faction.name }}</option>
+      <option [value]="season.name" *ngFor="let season of seasonsList$ | async">{{ season.name }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="factionFilter">Filtrar por facción:</label>
+    <select [(ngModel)]="factionFiltervalue" class="form-control" id="factionFilter" (change)="filterFaction()" [ngModelOptions]="{standalone: true}">
+      <option [value]="'all'">Todas</option>
+      <option [value]="faction.name" *ngFor="let faction of factionsList$ | async">{{ faction.name }}</option>
     </select>
   </div>
 </form>

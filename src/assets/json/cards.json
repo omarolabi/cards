@@ -1,7 +1,7 @@
 [
   {
     "number": 14,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Golpe final",
     "faction": "Saqueadores de Garrek",
     "type": "Ardid",
@@ -14,7 +14,7 @@
   },
   {
     "number": 43,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Resistencia forjada por la tormenta",
     "faction": "Campeones de Steelheart",
     "type": "Ardid",
@@ -27,7 +27,7 @@
   },
   {
     "number": 44,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Tácticas forjadas por la tormenta",
     "faction": "Campeones de Steelheart",
     "type": "Ardid",
@@ -40,7 +40,7 @@
   },
   {
     "number": 431,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Ofensiva total",
     "faction": "Universal",
     "type": "Mejora",
@@ -53,7 +53,7 @@
   },
   {
     "number": 75,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Evasión veloz",
     "faction": "Guardia Sepulcral",
     "type": "Ardid",
@@ -66,7 +66,7 @@
   },
   {
     "number": 299,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Empieza la cosecha",
     "faction": "Universal",
     "type": "Objetivo",
@@ -79,7 +79,7 @@
   },
   {
     "number": 91,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Aztuzia letal",
     "faction": "Chikoz de Ironskull",
     "type": "Objetivo",
@@ -92,7 +92,7 @@
   },
   {
     "number": 95,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Puñetazo",
     "faction": "Chikoz de Ironskull",
     "type": "Objetivo",
@@ -105,7 +105,7 @@
   },
   {
     "number": 103,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Liderando kon el ejemplo",
     "faction": "Chikoz de Ironskull",
     "type": "Ardid",
@@ -118,7 +118,7 @@
   },
   {
     "number": 315,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Robo a pleno día",
     "faction": "Universal",
     "type": "Ardid",
@@ -131,7 +131,7 @@
   },
   {
     "number": 341,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Engaño",
     "faction": "Universal",
     "type": "Ardid",
@@ -144,7 +144,7 @@
   },
   {
     "number": 107,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Kabeza dura",
     "faction": "Chikoz de Ironskull",
     "type": "Mejora",
@@ -157,7 +157,7 @@
   },
   {
     "number": 387,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Imagen parpadeante",
     "faction": "Universal",
     "type": "Mejora",
@@ -170,7 +170,7 @@
   },
   {
     "number": 126,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Furia berserker",
     "faction": "Los hachas escogidas",
     "type": "Ardid",
@@ -183,7 +183,7 @@
   },
   {
     "number": 138,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Golpe desafiante",
     "faction": "Los hachas escogidas",
     "type": "Mejora",
@@ -203,7 +203,7 @@
   },
   {
     "number": 141,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Bendito de Grimnir",
     "faction": "Los hachas escogidas",
     "type": "Mejora",
@@ -216,7 +216,7 @@
   },
   {
     "number": 280,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Planificación perfecta",
     "faction": "Universal",
     "type": "Objetivo",
@@ -229,7 +229,7 @@
   },
   {
     "number": 284,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Uso preciso de la fuerza",
     "faction": "Universal",
     "type": "Objetivo",
@@ -242,7 +242,7 @@
   },
   {
     "number": 328,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Forcejeo",
     "faction": "Universal",
     "type": "Ardid",
@@ -255,7 +255,7 @@
   },
   {
     "number": 343,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Mi turno",
     "faction": "Universal",
     "type": "Ardid",
@@ -268,7 +268,7 @@
   },
   {
     "number": 269,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "El campo de la muerte",
     "faction": "Universal",
     "type": "Objetivo",
@@ -281,7 +281,7 @@
   },
   {
     "number": 424,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Espíritu encadenado",
     "faction": "Universal",
     "type": "Mejora",
@@ -294,7 +294,7 @@
   },
   {
     "number": 356,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Tormenta de esquirlas",
     "faction": "Universal",
     "type": "Ardid",
@@ -307,7 +307,7 @@
   },
   {
     "number": 326,
-    "season": "Sh",
+    "season": "Shadespire",
     "title": "Congelado en el tiempo",
     "faction": "Universal",
     "type": "Ardid",
@@ -320,7 +320,7 @@
   },
   {
     "number": 36,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Los muertos vengativos",
     "faction": "Espinas de la Reina Zarza",
     "type": "Objetivo",
@@ -333,7 +333,7 @@
   },
   {
     "number": 38,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Avance vengativo",
     "faction": "Espinas de la Reina Zarza",
     "type": "Objetivo",
@@ -346,7 +346,7 @@
   },
   {
     "number": 306,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Avance vengativo",
     "faction": "Universal",
     "type": "Objetivo",
@@ -359,7 +359,7 @@
   },
   {
     "number": 330,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Mantener Objetivo 1",
     "faction": "Universal",
     "type": "Objetivo",
@@ -372,7 +372,7 @@
   },
   {
     "number": 331,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Mantener Objetivo 2",
     "faction": "Universal",
     "type": "Objetivo",
@@ -385,7 +385,7 @@
   },
   {
     "number": 332,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Mantener Objetivo 3",
     "faction": "Universal",
     "type": "Objetivo",
@@ -398,7 +398,7 @@
   },
   {
     "number": 333,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Mantener Objetivo 4",
     "faction": "Universal",
     "type": "Objetivo",
@@ -411,7 +411,7 @@
   },
   {
     "number": 334,
-    "season": "Nv",
+    "season": "Nightvault",
     "title": "Mantener Objetivo 5",
     "faction": "Universal",
     "type": "Objetivo",
