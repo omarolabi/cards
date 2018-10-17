@@ -1,54 +1,59 @@
 [
   {
     "number": 14,
+    "season": "Sh",
     "title": "Golpe final",
     "faction": "Saqueadores de Garrek",
     "type": "Ardid",
     "mainText": "<b>Reacción:</b> Juégala después de que una acción de Ataque de un guerrero enemigo haya dejado fuera de combate a un guerrero amigo adyacente. Su atacante sufre 1 de daño.",
     "loreText": "'Esos caníbales no mueren fácilmente. Uno le ha arrancado la cabeza a su asesino mientras se le desparramaban las propias tripas.'",
-    "location": "Caja Básica Shadespire",
+    "location": "Caja básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
   },
   {
     "number": 43,
+    "season": "Sh",
     "title": "Resistencia forjada por la tormenta",
     "faction": "Campeones de Steelheart",
     "type": "Ardid",
     "mainText": "Los guerreros amigos no pueden ser empujados por la primera acción de Ataque en la siguiente activación.",
     "loreText": "'No retrocedamos un paso, Hammers of Sigmar. No les demos nada excepto la muerte.'",
-    "location": "Caja Básica Shadespire",
+    "location": "Caja básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
   },
   {
     "number": 44,
+    "season": "Sh",
     "title": "Tácticas forjadas por la tormenta",
     "faction": "Campeones de Steelheart",
     "type": "Ardid",
     "mainText": "En la siguiente activación puedes realizar la siguiente Reacción.<br><b>Reacción:</b> Después de que una acción de Ataque de un guerrero enemigo fracase, elige hasta dos guerreros amigos y empújalos hasta un hexágono cada uno.",
     "loreText": "Los Stormcast Eternals luchan al unísono, su precisión parece sobrenatural.",
-    "location": "Caja Básica Shadespire",
+    "location": "Caja básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
   },
   {
     "number": 431,
+    "season": "Sh",
     "title": "Ofensiva total",
     "faction": "Universal",
     "type": "Mejora",
     "mainText": "<b>Acción.</b> Puedes tirar dos dados de ataque adicionales cuando este guerrero efectúe una acción de Ataque, aunque no cuando este guerrero efectúe una acción de Carga. Si lo haces, este guerrero no puede volver a ser activado esta fase.",
     "loreText": "Concentrando su fuerza en un único golpe, este guerrero desata una fuerza letal.",
-    "location": "Caja Básica Shadespire",
+    "location": "Caja básica Shadespire",
     "glory": "",
     "restricted": "",
     "attackActions": []
   },
   {
     "number": 75,
+    "season": "Sh",
     "title": "Evasión veloz",
     "faction": "Guardia Sepulcral",
     "type": "Ardid",
@@ -61,6 +66,7 @@
   },
   {
     "number": 299,
+    "season": "Sh",
     "title": "Empieza la cosecha",
     "faction": "Universal",
     "type": "Objetivo",
@@ -73,6 +79,7 @@
   },
   {
     "number": 91,
+    "season": "Sh",
     "title": "Aztuzia letal",
     "faction": "Chikoz de Ironskull",
     "type": "Objetivo",
@@ -85,6 +92,7 @@
   },
   {
     "number": 95,
+    "season": "Sh",
     "title": "Puñetazo",
     "faction": "Chikoz de Ironskull",
     "type": "Objetivo",
@@ -97,6 +105,7 @@
   },
   {
     "number": 103,
+    "season": "Sh",
     "title": "Liderando kon el ejemplo",
     "faction": "Chikoz de Ironskull",
     "type": "Ardid",
@@ -109,6 +118,7 @@
   },
   {
     "number": 315,
+    "season": "Sh",
     "title": "Robo a pleno día",
     "faction": "Universal",
     "type": "Ardid",
@@ -121,6 +131,7 @@
   },
   {
     "number": 341,
+    "season": "Sh",
     "title": "Engaño",
     "faction": "Universal",
     "type": "Ardid",
@@ -133,6 +144,7 @@
   },
   {
     "number": 107,
+    "season": "Sh",
     "title": "Kabeza dura",
     "faction": "Chikoz de Ironskull",
     "type": "Mejora",
@@ -145,6 +157,7 @@
   },
   {
     "number": 387,
+    "season": "Sh",
     "title": "Imagen parpadeante",
     "faction": "Universal",
     "type": "Mejora",
@@ -157,6 +170,7 @@
   },
   {
     "number": 126,
+    "season": "Sh",
     "title": "Furia berserker",
     "faction": "Los hachas escogidas",
     "type": "Ardid",
@@ -169,6 +183,7 @@
   },
   {
     "number": 138,
+    "season": "Sh",
     "title": "Golpe desafiante",
     "faction": "Los hachas escogidas",
     "type": "Mejora",
@@ -188,6 +203,7 @@
   },
   {
     "number": 141,
+    "season": "Sh",
     "title": "Bendito de Grimnir",
     "faction": "Los hachas escogidas",
     "type": "Mejora",
@@ -200,6 +216,7 @@
   },
   {
     "number": 280,
+    "season": "Sh",
     "title": "Planificación perfecta",
     "faction": "Universal",
     "type": "Objetivo",
@@ -212,6 +229,7 @@
   },
   {
     "number": 284,
+    "season": "Sh",
     "title": "Uso preciso de la fuerza",
     "faction": "Universal",
     "type": "Objetivo",
@@ -224,6 +242,7 @@
   },
   {
     "number": 328,
+    "season": "Sh",
     "title": "Forcejeo",
     "faction": "Universal",
     "type": "Ardid",
@@ -236,6 +255,7 @@
   },
   {
     "number": 343,
+    "season": "Sh",
     "title": "Mi turno",
     "faction": "Universal",
     "type": "Ardid",
@@ -248,6 +268,7 @@
   },
   {
     "number": 269,
+    "season": "Sh",
     "title": "El campo de la muerte",
     "faction": "Universal",
     "type": "Objetivo",
@@ -260,6 +281,7 @@
   },
   {
     "number": 424,
+    "season": "Sh",
     "title": "Espíritu encadenado",
     "faction": "Universal",
     "type": "Mejora",
@@ -272,6 +294,7 @@
   },
   {
     "number": 356,
+    "season": "Sh",
     "title": "Tormenta de esquirlas",
     "faction": "Universal",
     "type": "Ardid",
@@ -284,6 +307,7 @@
   },
   {
     "number": 326,
+    "season": "Sh",
     "title": "Congelado en el tiempo",
     "faction": "Universal",
     "type": "Ardid",
@@ -291,6 +315,110 @@
     "loreText": "El tiempo fluye de forma distinta en Shadespire para cada habitante.",
     "location": "Expansión Incursores raudos",
     "glory": "",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 36,
+    "season": "Nv",
+    "title": "Los muertos vengativos",
+    "faction": "Espinas de la Reina Zarza",
+    "type": "Objetivo",
+    "mainText": "Puntúa en un final de la fase si todos tus guerreros supervivientes (al menos tres) están Inspirados.",
+    "loreText": "La hora de los muertos ha llegado.",
+    "location": "Caja básica Nightvault",
+    "glory": 1,
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 38,
+    "season": "Nv",
+    "title": "Avance vengativo",
+    "faction": "Espinas de la Reina Zarza",
+    "type": "Objetivo",
+    "mainText": "Puntúa en un final de la fase si todos tus guerreros supervivientes están en territorio de tu oponente.",
+    "loreText": "Shadespire ha sido reclamada por los muertos espectrales.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 306,
+    "season": "Nv",
+    "title": "Avance vengativo",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa en el tercer final de la fase si todos tus guerreros supervivientes están en territorio de tu oponente.",
+    "loreText": "La esperanza aún no está perdida. Mientras resistamos podremos prevalecer.",
+    "location": "Caja básica Nightvault",
+    "glory": "2",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 330,
+    "season": "Nv",
+    "title": "Mantener Objetivo 1",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa esta carta en un final de fase si ocupas el objetivo 1.",
+    "loreText": "Hay un patrón en la realidad. Un gran plan que escapa a nuestra comprensión. Por ahora.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 331,
+    "season": "Nv",
+    "title": "Mantener Objetivo 2",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa esta carta en un final de fase si ocupas el objetivo 2.",
+    "loreText": "La magia cristalizada es la esencia pura de la creación, lista para dar forma a nuestros deseos.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 332,
+    "season": "Nv",
+    "title": "Mantener Objetivo 3",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa esta carta en un final de fase si ocupas el objetivo 3.",
+    "loreText": "La muerte es un castigo insuficiente para tu traición. la prisión eterna es más apropiada.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 333,
+    "season": "Nv",
+    "title": "Mantener Objetivo 4",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa esta carta en un final de fase si ocupas el objetivo 4.",
+    "loreText": "Un concepto basto, tal vez, pero no menos letal por ello.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
+    "restricted": "",
+    "attackActions": []
+  },
+  {
+    "number": 334,
+    "season": "Nv",
+    "title": "Mantener Objetivo 5",
+    "faction": "Universal",
+    "type": "Objetivo",
+    "mainText": "Puntúa esta carta en un final de fase si ocupas el objetivo 5.",
+    "loreText": "Los experimentos de transferencia de alma no son exitosos. He solicitado más sujetos.",
+    "location": "Caja básica Nightvault",
+    "glory": "1",
     "restricted": "",
     "attackActions": []
   }

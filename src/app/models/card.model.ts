@@ -1,5 +1,6 @@
 export interface CardModel {
   number: number;
+  season: string;
   title: string;
   faction: string;
   type: string;
