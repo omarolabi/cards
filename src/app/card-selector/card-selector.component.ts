@@ -23,8 +23,8 @@ export class CardSelectorComponent implements OnInit {
   public seasonsList$: Observable<SeasonModel[]>;
 
   private initialFilterValue = 'all';
-  public seasonFiltervalue = this.initialFilterValue;
-  public factionFiltervalue = this.initialFilterValue;
+  public seasonFilterValue = this.initialFilterValue;
+  public factionFilterValue = this.initialFilterValue;
 
   constructor(
     private cardsService: CardsService,
@@ -59,45 +59,43 @@ export class CardSelectorComponent implements OnInit {
   }
 
   public setFiltersData() {
-
-    if (localStorage.seasonFiltervalue) {
-      this.seasonFiltervalue = localStorage.seasonFiltervalue;
+    if (localStorage.seasonFilterValue) {
+      this.seasonFilterValue = localStorage.seasonFilterValue;
+      if (localStorage.seasonFilterValue !== this.initialFilterValue) {
+        this.filterCards(this.seasonFilterValue, 'season');
+      }
     } else {
-      localStorage.setItem('seasonFiltervalue', this.initialFilterValue);
+      localStorage.setItem('seasonFilterValue', this.initialFilterValue);
     }
 
-    if (localStorage.factionFiltervalue) {
-      this.factionFiltervalue = localStorage.factionFiltervalue;
+    if (localStorage.factionFilterValue) {
+      this.factionFilterValue = localStorage.factionFilterValue;
+      if (localStorage.factionFilterValue !== this.initialFilterValue) {
+        this.filterCards(this.factionFilterValue, 'faction');
+      }
     } else {
-      localStorage.setItem('factionFiltervalue', this.initialFilterValue);
+      localStorage.setItem('factionFilterValue', this.initialFilterValue);
     }
-
-    this.filterSeason();
-    this.filterFaction();
   }
 
-  public filterSeason() {
-    localStorage.setItem('seasonFiltervalue', this.seasonFiltervalue);
-    localStorage.setItem('factionFiltervalue', this.initialFilterValue);
-    this.factionFiltervalue = this.initialFilterValue;
+  public filterCards(filterValue, filterType) {
+    this.cardsList = this.cardsListOriginal;
+    localStorage.setItem(filterType + 'FilterValue', filterValue);
+    if (filterValue !== this.initialFilterValue) {
+      switch (filterType) {
+        case 'season':
+          this.cardsList = this.cardsListOriginal
+            .filter(elem => elem.season === filterValue);
+          this.factionFilterValue = this.initialFilterValue;
+          localStorage.setItem('factionFilterValue', this.initialFilterValue);
+          break;
+        case 'faction':
+          this.cardsList = this.cardsListOriginal
+            .filter(elem => elem.faction === filterValue);
+          this.seasonFilterValue = this.initialFilterValue;
+          localStorage.setItem('seasonFilterValue', this.initialFilterValue);
+          break;
+      }
+    }
   }
-
-  public filterFaction(): void {
-    // if (this.factionFiltervalue === 'all' && this.seasonFiltervalue === 'all') {
-    //   this.cardsList = this.cardsListOriginal;
-    // } else {
-
-    //   if (this.factionFiltervalue === 'all') {
-    //     this.cardsList = this.cardsListOriginal
-    //       .filter(elem => elem.faction === this.seasonFiltervalue);
-    //   }
-
-    //   this.cardsList = this.cardsListOriginal
-    //     .filter(elem => elem.faction === filterValue);
-    // }
-    localStorage.setItem('factionFiltervalue', this.factionFiltervalue);
-    localStorage.setItem('seasonFiltervalue', this.initialFilterValue);
-    this.seasonFiltervalue = this.initialFilterValue;
-  }
-
 }
