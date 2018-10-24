@@ -3,34 +3,47 @@
 </div>
 
 <div *ngIf="cards$ | async as card">
-  <h3 class="h4 text-center">
-    {{ card.title }}
-    <small class="text-muted">#{{ card.number }}</small>
-  </h3>
-  <p class="text-muted text-center">{{ card.type }} - {{ card.faction }}</p>
-  <p innerHTML="{{ card.mainText }}"></p>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">{{ card.title }}</h4>
+      <div class="row">
+        <span class="col-4 text-muted text-left">{{ card.type }}</span>
+        <span class="col-8 text-muted text-right">{{ card.faction }}</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p innerHTML="{{ card.mainText }}"></p>
+      <p class="text-muted text-center" *ngIf="card.type === 'Objetivo'">Puntos de gloria: {{ card.glory }}</p>
+      <ng-container *ngIf="card.attackActions.length > 0">
+        <table class="table" *ngFor="let attackActions of card.attackActions">
+          <thead>
+            <tr>
+              <th>Alc.</th>
+              <th>Dados</th>
+              <th>Daño</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ attackActions.range }}</td>
+              <td>{{ attackActions.dicesType }} {{ attackActions.dices }}</td>
+              <td>{{ attackActions.damage }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+    </div>
+    <div class="card-footer">
+      <h5 class="text-center"><small class="text-muted">{{ card.season }} <span class="badge badge-secondary">{{
+            card.number }}</span></small></h5>
+    </div>
+  </div>
   <!-- <figure class="figure">
     <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
   </figure> -->
-  <p class="text-muted text-center" *ngIf="card.type === 'Objetivo'">Puntos de gloria: {{ card.glory }}</p>
-  <ng-container *ngIf="card.attackActions.length > 0">
-    <table class="table" *ngFor="let attackActions of card.attackActions">
-      <thead>
-        <tr>
-          <th>Alc.</th>
-          <th>Dados</th>
-          <th>Daño</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ attackActions.range }}</td>
-          <td>{{ attackActions.dicesType }} {{ attackActions.dices }}</td>
-          <td>{{ attackActions.damage }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </ng-container>
+  <br>
   <p>
     <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">Volver</button>
   </p>
