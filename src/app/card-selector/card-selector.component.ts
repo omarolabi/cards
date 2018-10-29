@@ -5,8 +5,8 @@ import { SeasonsService } from '../services/seasons.service';
 import { CardModel } from '../models/card.model';
 import { FactionModel } from '../models/faction.model';
 import { SeasonModel } from '../models/season.model';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/finally';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card-selector',
@@ -48,10 +48,13 @@ export class CardSelectorComponent implements OnInit {
 
   private getCardsList(): void {
     this.cardsService.getCards()
-      .finally(() => {
-        this.isWorking = false;
-        this.setFiltersData();
-      })
+      .pipe(
+        finalize(() => {
+          this.isWorking = false;
+          this.setFiltersData();
+        }
+        )
+      )
       .subscribe(data => {
         this.cardsListOriginal = data;
         this.cardsList = data;
