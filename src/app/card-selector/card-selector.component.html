@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <tr>
-      <td colspan="2" *ngIf="isWorking">Cargando ...</td>
+      <td colspan="3" *ngIf="isWorking">Cargando ...</td>
     </tr>
     <tr *ngFor="let card of cardsList | orderBy: 'number'">
       <td><small class="text-muted">{{ card.season }}</small></td>
