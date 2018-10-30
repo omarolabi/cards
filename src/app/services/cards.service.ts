@@ -1,24 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FactionModel } from '../models/faction.model';
+import { SeasonModel } from '../models/season.model';
 import { CardModel } from '../models/card.model';
-import { map } from 'rxjs/operators';
+
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class CardsService {
 
   constructor(
-    private http: HttpClient
+    private db: AngularFirestore
   ) { }
 
-  private configUrl = './assets/json/cards.json';
+  public getFactions(): Observable<FactionModel[]> {
+    return this.db.collection<FactionModel>('factions').valueChanges();
+  }
+
+  public getSeasons(): Observable<SeasonModel[]> {
+    return this.db.collection<SeasonModel>('seasons').valueChanges();
+  }
 
   public getCards(): Observable<CardModel[]> {
-    return this.http.get<CardModel[]>(this.configUrl);
+    return this.db.collection<CardModel>('cards').valueChanges();
   }
 
-  public getCard(number): Observable<CardModel> {
-    return this.http.get<CardModel[]>(this.configUrl)
-      .pipe(map(cards => cards.find(card => card.number === number)));
-  }
 }

@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { CardSelectorComponent } from './card-selector/card-selector.component';
 import { CardViewerComponent } from './card-viewer/card-viewer.component';
 import { CardsService } from './services/cards.service';
-import { FactionsService } from './services/factions.service';
-import { SeasonsService } from './services/seasons.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -37,9 +35,7 @@ import { OrderModule } from 'ngx-order-pipe';
     OrderModule
   ],
   providers: [
-    CardsService,
-    FactionsService,
-    SeasonsService
+    CardsService
   ],
   bootstrap: [AppComponent]
 })
