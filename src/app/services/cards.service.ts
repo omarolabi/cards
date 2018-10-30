@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { CardModel } from '../models/card.model';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class CardsService {
@@ -19,6 +19,6 @@ export class CardsService {
 
   public getCard(number): Observable<CardModel> {
     return this.http.get<CardModel[]>(this.configUrl)
-    .map(cards => cards.find(card => card.number === number));
+      .pipe(map(cards => cards.find(card => card.number === number)));
   }
 }

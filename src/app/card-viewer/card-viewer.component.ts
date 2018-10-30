@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CardsService } from '../services/cards.service';
 import { CardModel } from '../models/card.model';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/finally';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card-viewer',
@@ -29,7 +29,7 @@ export class CardViewerComponent implements OnInit {
   private getCard(): void {
     const number = +this.route.snapshot.paramMap.get('number');
     this.cards$ = this.cardsService.getCard(number)
-      .finally(() => this.isWorking = false);
+      .pipe(finalize(() => this.isWorking = false));
   }
 
   goBack(): void {
