@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "firebase": "ng build --aot -prod && sw-precache --verbose --config=sw-precache-config.js && firebase deploy"
+    "firebase": "ng build --prod && sw-precache --verbose --config=sw-precache-config.js && firebase deploy"
   },
   "private": true,
   "dependencies": {
