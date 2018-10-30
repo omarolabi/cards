@@ -8,6 +8,8 @@ import { SeasonModel } from '../models/season.model';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-card-selector',
   templateUrl: './card-selector.component.html',
@@ -19,17 +21,21 @@ export class CardSelectorComponent implements OnInit {
   public isWorking = true;
   public cardsListOriginal: CardModel[] = [];
   public cardsList: CardModel[] = [];
-  public factionsList$: Observable<FactionModel[]>;
+  public factionsList$: Observable<any>;
+  // public factionsList$: Observable<FactionModel[]>;
   public seasonsList$: Observable<SeasonModel[]>;
 
   private initialFilterValue = 'all';
   public seasonFilterValue = this.initialFilterValue;
   public factionFilterValue = this.initialFilterValue;
 
+  items: Observable<any[]>;
+
   constructor(
     private cardsService: CardsService,
     private seasonsService: SeasonsService,
-    private factionsService: FactionsService
+    private factionsService: FactionsService,
+    private db: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -43,7 +49,8 @@ export class CardSelectorComponent implements OnInit {
   }
 
   private getFactions(): void {
-    this.factionsList$ = this.factionsService.getFactions();
+    this.factionsList$ = this.db.collection('factions').valueChanges();
+    // this.factionsList$ = this.factionsService.getFactions();
   }
 
   private getCardsList(): void {
