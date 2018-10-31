@@ -9,6 +9,7 @@ export interface CardModel {
   location: string;
   glory: number;
   restricted: string;
+  errataType: string;
   attackActions: AttackActionsModel;
 }
 
