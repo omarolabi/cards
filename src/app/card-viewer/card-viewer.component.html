@@ -1,9 +1,7 @@
 <div *ngIf="isWorking">
   Cargando ...
 </div>
-
-<div *ngIf="cards$ | async as card">
-
+<div *ngIf="card">
   <div class="card">
     <div class="card-header">
       <h4 class="text-center">{{ card.title }}</h4>
@@ -13,36 +11,18 @@
       </div>
     </div>
     <div class="card-body">
+      <div *ngIf="card.errataType === 'replaceText'" class="text-muted">Sustituye el texto por:</div>
+      <div *ngIf="card.errataType === 'replaceFirstLine'" class="text-muted">Sustituye la primera frase del texto por:</div>
       <p innerHTML="{{ card.mainText }}"></p>
-      <p class="text-muted text-center" *ngIf="card.type === 'Objetivo'">Puntos de gloria: {{ card.glory }}</p>
-      <ng-container *ngIf="card.attackActions.length > 0">
-        <table class="table" *ngFor="let attackActions of card.attackActions">
-          <thead>
-            <tr>
-              <th>Alc.</th>
-              <th>Dados</th>
-              <th>Daño</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{ attackActions.range }}</td>
-              <td>{{ attackActions.dicesType }} {{ attackActions.dices }}</td>
-              <td>{{ attackActions.damage }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </ng-container>
-
     </div>
     <div class="card-footer">
-      <h5 class="text-center"><small class="text-muted">{{ card.season }} <span class="badge badge-secondary">{{
-            card.number }}</span></small></h5>
+      <p class="text-center">
+        <span class="text-muted">{{ card.season }} </span>
+        <span class="badge badge-secondary">{{ card.number }}</span>
+      </p>
     </div>
   </div>
-  <!-- <figure class="figure">
-    <img class="img-fluid figure-img" src="./assets/images/{{card.number}}.png" alt="">
-  </figure> -->
+
   <br>
   <p>
     <button class="btn btn-primary btn-block btn-dark" (click)="goBack()">Volver</button>

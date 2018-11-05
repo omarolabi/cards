@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../services/cards.service';
-import { FactionsService } from '../services/factions.service';
-import { SeasonsService } from '../services/seasons.service';
 import { CardModel } from '../models/card.model';
 import { FactionModel } from '../models/faction.model';
 import { SeasonModel } from '../models/season.model';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-card-selector',
@@ -19,6 +17,7 @@ export class CardSelectorComponent implements OnInit {
   public isWorking = true;
   public cardsListOriginal: CardModel[] = [];
   public cardsList: CardModel[] = [];
+  public cardsListOriginal$: Observable<CardModel[]>;
   public factionsList$: Observable<FactionModel[]>;
   public seasonsList$: Observable<SeasonModel[]>;
 
@@ -26,39 +25,38 @@ export class CardSelectorComponent implements OnInit {
   public seasonFilterValue = this.initialFilterValue;
   public factionFilterValue = this.initialFilterValue;
 
+
   constructor(
-    private cardsService: CardsService,
-    private seasonsService: SeasonsService,
-    private factionsService: FactionsService
+    private cardsService: CardsService
   ) { }
 
   ngOnInit() {
     this.getSeasons();
     this.getFactions();
     this.getCardsList();
+    this.firstFilter();
+  }
+
+  private firstFilter() {
+    this.cardsListOriginal$
+    .subscribe(data => {
+      this.cardsListOriginal = data;
+      this.cardsList = data;
+      this.isWorking = false;
+      this.setFiltersData();
+    });
   }
 
   private getSeasons(): void {
-    this.seasonsList$ = this.seasonsService.getSeasons();
+    this.seasonsList$ = this.cardsService.getSeasons();
   }
 
   private getFactions(): void {
-    this.factionsList$ = this.factionsService.getFactions();
+    this.factionsList$ = this.cardsService.getFactions();
   }
 
   private getCardsList(): void {
-    this.cardsService.getCards()
-      .pipe(
-        finalize(() => {
-          this.isWorking = false;
-          this.setFiltersData();
-        }
-        )
-      )
-      .subscribe(data => {
-        this.cardsListOriginal = data;
-        this.cardsList = data;
-      });
+    this.cardsListOriginal$ = this.cardsService.getCards();
   }
 
   public setFiltersData() {

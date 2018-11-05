@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { CardsService } from '../services/cards.service';
 import { CardModel } from '../models/card.model';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card-viewer',
@@ -14,6 +14,7 @@ import { finalize } from 'rxjs/operators';
 export class CardViewerComponent implements OnInit {
 
   public cards$: Observable<CardModel>;
+  public card: CardModel;
   public isWorking = true;
 
   constructor(
@@ -28,8 +29,15 @@ export class CardViewerComponent implements OnInit {
 
   private getCard(): void {
     const number = +this.route.snapshot.paramMap.get('number');
-    this.cards$ = this.cardsService.getCard(number)
-      .pipe(finalize(() => this.isWorking = false));
+
+    this.cardsService.getCards()
+      .pipe(map(cards => cards.find(card => card.number === number)))
+      .subscribe(
+        data => {
+          this.card = data;
+          this.isWorking = false;
+        }
+      );
   }
 
   goBack(): void {
