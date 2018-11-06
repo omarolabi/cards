@@ -13,13 +13,13 @@
     <div class="card-body">
       <div *ngIf="card.errataType === 'replaceText'" class="text-muted">Sustituye el texto por:</div>
       <div *ngIf="card.errataType === 'replaceFirstLine'" class="text-muted">Sustituye la primera frase del texto por:</div>
-      <p innerHTML="{{ card.mainText }}"></p>
+      <div innerHTML="{{ card.mainText }}"></div>
     </div>
     <div class="card-footer">
-      <p class="text-center">
+      <div class="text-center">
         <span class="text-muted">{{ card.season }} </span>
-        <span class="badge badge-secondary">{{ card.number }}</span>
-      </p>
+        <span class="badge badge-secondary" *ngIf="card.season !== 'Global'">{{ card.number }}</span>
+      </div>
     </div>
   </div>
 
