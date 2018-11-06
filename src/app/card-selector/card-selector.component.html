@@ -1,18 +1,21 @@
 <form>
-  <div class="form-group">
-    <label for="seasonFilter">Filtrar por temporada:</label>
-    <select [(ngModel)]="seasonFilterValue" class="form-control" id="seasonFilter" (change)="setFilterValues($event.target.value, 'season')" [ngModelOptions]="{standalone: true}">
-      <option [value]="'all'">Todas</option>
-      <option [value]="season.name" *ngFor="let season of seasonsList$ | async">{{ season.name }}</option>
-    </select>
-  </div>
+  <div class="row">
+    <div class="form-group col-6">
+      <label for="seasonFilter"><small>Filtrar por temporada:</small></label>
+      <select [(ngModel)]="seasonFilterValue" class="form-control" id="seasonFilter" (change)="setFilterValues($event.target.value, 'season')" [ngModelOptions]="{standalone: true}">
+        <option [value]="'all'">Todas</option>
+        <option [value]="season.name" *ngFor="let season of seasonsList$ | async">{{ season.name }}</option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label for="factionFilter">Filtrar por facción:</label>
-    <select [(ngModel)]="factionFilterValue" class="form-control" id="factionFilter" (change)="setFilterValues($event.target.value, 'faction')" [ngModelOptions]="{standalone: true}">
-      <option [value]="'all'">Todas</option>
-      <option [value]="faction.name" *ngFor="let faction of factionsList$ | async">{{ faction.name }}</option>
-    </select>
+
+    <div class="form-group col-6">
+      <label for="factionFilter"><small>Filtrar por facción:</small></label>
+      <select [(ngModel)]="factionFilterValue" class="form-control" id="factionFilter" (change)="setFilterValues($event.target.value, 'faction')" [ngModelOptions]="{standalone: true}">
+        <option [value]="'all'">Todas</option>
+        <option [value]="faction.name" *ngFor="let faction of factionsList$ | async">{{ faction.name }}</option>
+      </select>
+    </div>
   </div>
 </form>
 
