@@ -14,14 +14,13 @@ import { Observable } from 'rxjs';
 
 export class CardSelectorComponent implements OnInit {
 
+  private initialFilterValue = 'all';
+  private cardsList: CardModel[];
+
+  public filteredList: CardModel[];
   public isWorking = true;
-  public cardsListOriginal: CardModel[] = [];
-  public cardsList: CardModel[] = [];
-  public cardsListOriginal$: Observable<CardModel[]>;
   public factionsList$: Observable<FactionModel[]>;
   public seasonsList$: Observable<SeasonModel[]>;
-
-  private initialFilterValue = 'all';
   public seasonFilterValue = this.initialFilterValue;
   public factionFilterValue = this.initialFilterValue;
 
@@ -34,17 +33,7 @@ export class CardSelectorComponent implements OnInit {
     this.getSeasons();
     this.getFactions();
     this.getCardsList();
-    this.firstFilter();
-  }
-
-  private firstFilter() {
-    this.cardsListOriginal$
-    .subscribe(data => {
-      this.cardsListOriginal = data;
-      this.cardsList = data;
-      this.isWorking = false;
-      this.setFiltersData();
-    });
+    this.initialFilterValues();
   }
 
   private getSeasons(): void {
@@ -56,47 +45,53 @@ export class CardSelectorComponent implements OnInit {
   }
 
   private getCardsList(): void {
-    this.cardsListOriginal$ = this.cardsService.getCards();
+    this.cardsService.getCards()
+      .subscribe(data => {
+        this.cardsList = data;
+        this.isWorking = false;
+        this.filterCardsList();
+      });
   }
 
-  public setFiltersData() {
+  private initialFilterValues() {
     if (localStorage.seasonFilterValue) {
       this.seasonFilterValue = localStorage.seasonFilterValue;
-      if (localStorage.seasonFilterValue !== this.initialFilterValue) {
-        this.filterCards(this.seasonFilterValue, 'season');
-      }
     } else {
       localStorage.setItem('seasonFilterValue', this.initialFilterValue);
     }
-
     if (localStorage.factionFilterValue) {
       this.factionFilterValue = localStorage.factionFilterValue;
-      if (localStorage.factionFilterValue !== this.initialFilterValue) {
-        this.filterCards(this.factionFilterValue, 'faction');
-      }
     } else {
       localStorage.setItem('factionFilterValue', this.initialFilterValue);
     }
   }
 
-  public filterCards(filterValue, filterType) {
-    this.cardsList = this.cardsListOriginal;
-    localStorage.setItem(filterType + 'FilterValue', filterValue);
-    if (filterValue !== this.initialFilterValue) {
-      switch (filterType) {
-        case 'season':
-          this.cardsList = this.cardsListOriginal
-            .filter(elem => elem.season === filterValue);
-          this.factionFilterValue = this.initialFilterValue;
-          localStorage.setItem('factionFilterValue', this.initialFilterValue);
-          break;
-        case 'faction':
-          this.cardsList = this.cardsListOriginal
-            .filter(elem => elem.faction === filterValue);
-          this.seasonFilterValue = this.initialFilterValue;
-          localStorage.setItem('seasonFilterValue', this.initialFilterValue);
-          break;
-      }
+  private filterCardsList() {
+    if (this.seasonFilterValue !== this.initialFilterValue) {
+      this.filteredList = this.cardsList
+        .filter(elem => elem.season === this.seasonFilterValue);
+    } else if (this.factionFilterValue !== this.initialFilterValue) {
+      this.filteredList = this.cardsList
+        .filter(elem => elem.faction === this.factionFilterValue);
+    } else {
+      this.filteredList = this.cardsList;
     }
+  }
+
+  public setFilterValues(filterValue, filterType) {
+    localStorage.setItem(filterType + 'FilterValue', filterValue);
+
+    switch (filterType) {
+      case 'season':
+        localStorage.setItem('factionFilterValue', this.initialFilterValue);
+        this.factionFilterValue = this.initialFilterValue;
+        break;
+      case 'faction':
+        localStorage.setItem('seasonFilterValue', this.initialFilterValue);
+        this.seasonFilterValue = this.initialFilterValue;
+        break;
+    }
+
+    this.filterCardsList();
   }
 }
