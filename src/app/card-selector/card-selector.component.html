@@ -27,10 +27,11 @@
     <tr *ngFor="let card of cardsList | orderBy: 'number'">
       <td>
         <small class="badge badge-secondary">
-          <span *ngIf="card.season === 'Shadespire'">Sh </span>
-          <span *ngIf="card.season === 'Nightvault'">Nv </span>
-          <span *ngIf="card.season === 'Líderes'">Ld </span>
-          {{ card.number }}
+          <span *ngIf="card.season === 'Shadespire'">Sh</span>
+          <span *ngIf="card.season === 'Nightvault'">Nv</span>
+          <span *ngIf="card.season === 'Líderes'">Ld</span>
+          <span *ngIf="card.season === 'Global'">Global </span>
+          <span *ngIf="card.season !== 'Global'"> {{ card.number }}</span>
         </small>
       </td>
       <td>
