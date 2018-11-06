@@ -12,6 +12,7 @@
     </div>
     <div class="card-body">
       <div *ngIf="card.errataType === 'replaceText'" class="text-muted">Sustituye el texto por:</div>
+      <div *ngIf="card.errataType === 'addText'" class="text-muted">Añade la siguiente frase:</div>
       <div *ngIf="card.errataType === 'replaceFirstLine'" class="text-muted">Sustituye la primera frase del texto por:</div>
       <div innerHTML="{{ card.mainText }}"></div>
     </div>
