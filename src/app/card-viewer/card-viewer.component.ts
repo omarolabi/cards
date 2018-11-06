@@ -26,12 +26,10 @@ export class CardViewerComponent implements OnInit {
   ngOnInit() {
     this.getCard();
   }
-
   private getCard(): void {
-    const number = +this.route.snapshot.paramMap.get('number');
+    const cardId = this.route.snapshot.paramMap.get('cardId');
 
-    this.cardsService.getCards()
-      .pipe(map(cards => cards.find(card => card.number === number)))
+    this.cardsService.getCard(cardId)
       .subscribe(
         data => {
           this.card = data;

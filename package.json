@@ -4,12 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "firebase": "ng build --prod && sw-precache --verbose --config=sw-precache-config.js && firebase deploy"
+    "firebase": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -51,7 +51,6 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^5.4.1",
-    "sw-precache": "^5.2.1",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1"
   },

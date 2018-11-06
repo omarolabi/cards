@@ -4,7 +4,7 @@ import { FactionModel } from '../models/faction.model';
 import { SeasonModel } from '../models/season.model';
 import { CardModel } from '../models/card.model';
 
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Injectable()
 export class CardsService {
@@ -25,4 +25,13 @@ export class CardsService {
     return this.db.collection<CardModel>('cards').valueChanges();
   }
 
+  public getCard(cardId): Observable<CardModel> {
+    let itemDoc: AngularFirestoreDocument<CardModel>;
+    let item: Observable<CardModel>;
+
+    itemDoc = this.db.doc<CardModel>(`cards/${cardId}`);
+    item = itemDoc.valueChanges();
+
+    return item;
+  }
 }
