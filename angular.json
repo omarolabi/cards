@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WU Cards": {
+    "WU-Cards": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -49,19 +49,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WU Cards:build",
+            "browserTarget": "WU-Cards:build",
             "port": 4201
           },
           "configurations": {
             "production": {
-              "browserTarget": "WU Cards:build:production"
+              "browserTarget": "WU-Cards:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WU Cards:build"
+            "browserTarget": "WU-Cards:build"
           }
         },
         "test": {
@@ -96,7 +96,7 @@
         }
       }
     },
-    "WU Cards-e2e": {
+    "WU-Cards-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -105,7 +105,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "WU Cards:serve"
+            "devServerTarget": "WU-Cards:serve"
           }
         },
         "lint": {
@@ -122,7 +122,7 @@
       }
     }
   },
-  "defaultProject": "WU Cards",
+  "defaultProject": "WU-Cards",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
