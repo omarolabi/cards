@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FactionModel } from '../models/faction.model';
 import { SeasonModel } from '../models/season.model';
+import { LocationModel } from '../models/location.model';
 import { CardModel } from '../models/card.model';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -19,6 +20,10 @@ export class CardsService {
 
   public getSeasons(): Observable<SeasonModel[]> {
     return this.db.collection<SeasonModel>('seasons').valueChanges();
+  }
+
+  public getLocations(): Observable<LocationModel[]> {
+    return this.db.collection<LocationModel>('locations').valueChanges();
   }
 
   public getCards(): Observable<CardModel[]> {

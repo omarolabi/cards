@@ -3,6 +3,7 @@ import { CardsService } from '../services/cards.service';
 import { CardModel } from '../models/card.model';
 import { FactionModel } from '../models/faction.model';
 import { SeasonModel } from '../models/season.model';
+import { LocationModel } from '../models/location.model';
 import { Observable } from 'rxjs';
 
 
@@ -14,16 +15,20 @@ import { Observable } from 'rxjs';
 
 export class CardSelectorComponent implements OnInit {
 
-  private initialFilterValue = 'all';
   private cardsList: CardModel[];
 
+  public initialFilterValue = 'all';
   public filteredList: CardModel[];
   public isWorking = true;
   public factionsList$: Observable<FactionModel[]>;
   public seasonsList$: Observable<SeasonModel[]>;
-  public seasonFilterValue = this.initialFilterValue;
-  public factionFilterValue = this.initialFilterValue;
+  public locationsList$: Observable<LocationModel[]>;
 
+  public filterValues = {
+    season: this.initialFilterValue,
+    faction: this.initialFilterValue,
+    location: this.initialFilterValue
+  };
 
   constructor(
     private cardsService: CardsService
@@ -32,6 +37,7 @@ export class CardSelectorComponent implements OnInit {
   ngOnInit() {
     this.getSeasons();
     this.getFactions();
+    this.getLocations();
     this.getCardsList();
     this.initialFilterValues();
   }
@@ -44,6 +50,10 @@ export class CardSelectorComponent implements OnInit {
     this.factionsList$ = this.cardsService.getFactions();
   }
 
+  private getLocations(): void {
+    this.locationsList$ = this.cardsService.getLocations();
+  }
+
   private getCardsList(): void {
     this.cardsService.getCards()
       .subscribe(data => {
@@ -54,44 +64,38 @@ export class CardSelectorComponent implements OnInit {
   }
 
   private initialFilterValues() {
-    if (localStorage.seasonFilterValue) {
-      this.seasonFilterValue = localStorage.seasonFilterValue;
-    } else {
-      localStorage.setItem('seasonFilterValue', this.initialFilterValue);
-    }
-    if (localStorage.factionFilterValue) {
-      this.factionFilterValue = localStorage.factionFilterValue;
-    } else {
-      localStorage.setItem('factionFilterValue', this.initialFilterValue);
+    for (const [key] of Object.entries(this.filterValues)) {
+      if (localStorage[key]) {
+        this.filterValues[key] = localStorage[key];
+      } else {
+        localStorage.setItem(key, this.initialFilterValue);
+      }
     }
   }
 
   private filterCardsList() {
-    if (this.seasonFilterValue !== this.initialFilterValue) {
+    let filter: string;
+    for (const [key] of Object.entries(this.filterValues)) {
+      if (this.filterValues[key] !== this.initialFilterValue) {
+        filter = key;
+      }
+    }
+    if (filter) {
       this.filteredList = this.cardsList
-        .filter(elem => elem.season === this.seasonFilterValue);
-    } else if (this.factionFilterValue !== this.initialFilterValue) {
-      this.filteredList = this.cardsList
-        .filter(elem => elem.faction === this.factionFilterValue);
+        .filter(elem => elem[filter] === this.filterValues[filter]);
     } else {
       this.filteredList = this.cardsList;
     }
   }
 
   public setFilterValues(filterValue, filterType) {
-    localStorage.setItem(filterType + 'FilterValue', filterValue);
-
-    switch (filterType) {
-      case 'season':
-        localStorage.setItem('factionFilterValue', this.initialFilterValue);
-        this.factionFilterValue = this.initialFilterValue;
-        break;
-      case 'faction':
-        localStorage.setItem('seasonFilterValue', this.initialFilterValue);
-        this.seasonFilterValue = this.initialFilterValue;
-        break;
+    for (const [key] of Object.entries(this.filterValues)) {
+      localStorage.setItem(key, this.initialFilterValue);
     }
-
+    localStorage.setItem(filterType, filterValue);
+    for (const [key] of Object.entries(this.filterValues)) {
+      this.filterValues[key] = localStorage[key];
+    }
     this.filterCardsList();
   }
 }
