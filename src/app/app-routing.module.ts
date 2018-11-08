@@ -4,8 +4,8 @@ import { CardViewerComponent } from './card-viewer/card-viewer.component';
 import { CardSelectorComponent } from './card-selector/card-selector.component';
 
 export const routes: Routes = [
-  { path: 'card/:cardId', component: CardViewerComponent },
-  { path: 'selector', component: CardSelectorComponent },
+  { path: 'card/:cardId', component: CardViewerComponent, data: {animation: 'ViewerPage'} },
+  { path: 'selector', component: CardSelectorComponent, data: {animation: 'SelectorPage'} },
   { path: '', redirectTo: '/selector', pathMatch: 'full' }
 ];
 

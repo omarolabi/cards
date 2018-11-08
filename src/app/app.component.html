@@ -4,8 +4,12 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 offset-lg-3">
-      <router-outlet></router-outlet>
+<div class="col-lg-6 offset-lg-3" >
+
+    <div [@myAnimation]="prepareRoute(outlet)" >
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
+
+  </div>
   </div>
 </div>

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { CardSelectorComponent } from './card-selector/card-selector.component';
 import { CardViewerComponent } from './card-viewer/card-viewer.component';
@@ -25,6 +27,7 @@ import { OrderModule } from 'ngx-order-pipe';
 ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
